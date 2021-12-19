@@ -3,10 +3,13 @@ const fileUpload = require("express-fileupload");
 const { UserRoutes, ProductRoutes } = require("./routes");
 const loaders = require("./loaders");
 const config = require("./config");
+const events = require("./scripts/events");
 const path = require("path");
+const errorHandler = require("./middlewares/errorHandler");
 
 config();
 loaders();
+events();
 
 const app = express();
 app.use("/product-images", express.static(path.join(__dirname, "./", "uploads/products")));
@@ -17,4 +20,12 @@ app.listen(process.env.APP_PORT, () => {
   console.log(`Application is running on ${process.env.APP_PORT}`);
   app.use("/users", UserRoutes);
   app.use("/products", ProductRoutes);
+
+  app.use((req, res, next) => {
+    const error = new Error("Böyle bir EP Bulunmamaktadır..");
+    error.status = 404;
+    next(error);
+  });
+
+  app.use(errorHandler);
 });

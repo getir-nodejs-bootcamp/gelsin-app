@@ -15,6 +15,10 @@ const createAdminUser = Joi.object({
   isAdmin: Joi.boolean().default(true),
 });
 
+const resetPassword = Joi.object({
+  email: Joi.string().email().required().min(8),
+});
+
 const updateUser = Joi.object({
   first_name: Joi.string().min(2),
   last_name: Joi.string().min(2),
@@ -41,4 +45,5 @@ module.exports = {
   userQuery,
   updateUser,
   userLogin,
+  resetPassword,
 };
