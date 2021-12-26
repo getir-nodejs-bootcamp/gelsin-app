@@ -5,6 +5,7 @@ const ProductService = require("../services/ProductService");
 const ApiError = require("../errors/ApiError");
 class ProductController {
   index(req, res, next) {
+    // console.log("req :>> ", req);
     ProductService.list()
       .then((itemList) => {
         if (!itemList) return next(new ApiError("Sorun oluştu"));

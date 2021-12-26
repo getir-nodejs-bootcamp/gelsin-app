@@ -1,0 +1,13 @@
+GET /products 200 1418 - 31.666 ms
+::1 - - [26/Dec/2021:08:14:35 +0000] "POST /users/login HTTP/1.1" 200 3293 "-" "PostmanRuntime/7.28.3"
+GET /products 200 1418 - 64.261 ms
+GET /products 200 1418 - 73.334 ms
+GET /products 200 1418 - 64.322 ms
+GET /products 200 1418 - 68.885 ms
+GET /products 200 1418 - 76.039 ms
+GET /products 200 1418 - 99.297 ms
+POST /products 200 281 - 69.139 ms
+GET /products 200 1760 - 86.626 ms
+GET /products 200 1760 - 82.387 ms
+POST /products 200 281 - 36.379 ms
+POST /productss 404 56 - 1.290 ms
