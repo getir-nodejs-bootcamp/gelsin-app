@@ -8,6 +8,7 @@ const path = require("path");
 const fs = require("fs");
 const errorHandler = require("./middlewares/errorHandler");
 const morgan = require("morgan");
+const cors = require("cors");
 
 config();
 loaders();
@@ -17,7 +18,12 @@ const app = express();
 app.use("/product-images", express.static(path.join(__dirname, "./", "uploads/products")));
 app.use(express.json());
 app.use(fileUpload());
-
+app.use(
+  cors({
+    methods: "*",
+    origin: "*",
+  })
+);
 // create a write stream (in append mode)
 const accessLogStream = fs.createWriteStream(path.join(__dirname, "logs/network", "access.log"), { flags: "a" });
 // setup the logger
