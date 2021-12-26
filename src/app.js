@@ -23,8 +23,8 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, "logs/network"
 // setup the logger
 app.use(morgan("tiny", { stream: accessLogStream }));
 
-app.listen(process.env.APP_PORT, () => {
-  console.log(`Application is running on ${process.env.APP_PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Application is running on ${process.env.PORT}`);
   app.use("/users", UserRoutes);
   app.use("/products", ProductRoutes);
 
