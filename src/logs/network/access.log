@@ -11,3 +11,8 @@ GET /products 200 1760 - 86.626 ms
 GET /products 200 1760 - 82.387 ms
 POST /products 200 281 - 36.379 ms
 POST /productss 404 56 - 1.290 ms
+GET /users 200 935 - 19.769 ms
+GET /users 200 935 - 5.968 ms
+GET /users 200 935 - 4.742 ms
+GET /users 200 935 - 6.161 ms
+GET /users 200 2 - 71.684 ms
