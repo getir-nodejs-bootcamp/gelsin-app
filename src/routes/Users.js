@@ -13,7 +13,7 @@ router.route("/login").post(validate(userSchemas.userLogin, "body"), Users.login
 
 //! Admin Stuff.
 router.route("/").get(authenticateAdmin, Users.index);
-router.route("/").post(authenticateAdmin, validate(userSchemas.createUser, "body"), Users.create);
+router.route("/").post(validate(userSchemas.createUser, "body"), Users.create);
 router.route("/reset-password").post(validate(userSchemas.resetPassword), Users.resetPassword);
 // router.route("/:typeId").post(validate(userQuery, "query"),validate(createUser, "body"), create);
 
